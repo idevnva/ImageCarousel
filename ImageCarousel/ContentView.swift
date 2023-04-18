@@ -27,9 +27,6 @@ struct ContentView: View {
                 }
                 .gesture(
                     DragGesture()
-                        .updating($dragOffset, body: { (value, state, transaction) in
-                            state = value.translation.width
-                        })
                         .onEnded({ value in
                             let threshold: CGFloat = 50
                             if value.translation.width > threshold {
